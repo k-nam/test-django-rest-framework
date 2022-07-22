@@ -16,8 +16,6 @@ class WorkflowSerializer(serializers.ModelSerializer):
 
     def get_gcp_service_account(self, obj):
         gsa = GcpServiceAccount.objects.filter(workflow_id=obj.id).first()
-        print(gsa.name)
-        print(GcpServiceAccountSerializer(gsa).data)
         return GcpServiceAccountSerializer(gsa).data
 
     # gcp_service_account = GcpServiceAccountSerializer(queryset=GcpServiceAccount.objects.filter())
