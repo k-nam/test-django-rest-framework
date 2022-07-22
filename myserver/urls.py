@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from library.views import BookViewSet, HumanViewSet
+from library.views import WorkflowViewSet, GcpServiceAccountViewSet
 
 router = routers.DefaultRouter()
-router.register(r'books', BookViewSet)
-router.register(r'humans', HumanViewSet)
+router.register(r'workflows', WorkflowViewSet)
+router.register(r'gcp_service_accounts', GcpServiceAccountViewSet)
 
 
 urlpatterns = [

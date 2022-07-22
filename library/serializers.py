@@ -1,14 +1,14 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Book, Human
+from .models import Workflow, GcpServiceAccount
 
-class BookSerializer(serializers.ModelSerializer):
+class WorkflowSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = Workflow
         fields = '__all__'
 
 
-class HumanSerializer(serializers.ModelSerializer):
+class GcpServiceAccountSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Human
+        model = GcpServiceAccount
         fields = '__all__'

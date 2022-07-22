@@ -1,15 +1,15 @@
 from rest_framework import viewsets, permissions
-from library.models import Book, Human
-from library.serializers import BookSerializer, HumanSerializer
+from library.models import Workflow, GcpServiceAccount
+from library.serializers import WorkflowSerializer, GcpServiceAccountSerializer
 
 
-class BookViewSet(viewsets.ModelViewSet):
-    queryset = Book.objects.all().order_by('title')
-    serializer_class = BookSerializer
+class WorkflowViewSet(viewsets.ModelViewSet):
+    queryset = Workflow.objects.all().order_by('title')
+    serializer_class = WorkflowSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
-class HumanViewSet(viewsets.ModelViewSet):
-    queryset = Human.objects.all()
-    serializer_class = HumanSerializer
+class GcpServiceAccountViewSet(viewsets.ModelViewSet):
+    queryset = GcpServiceAccount.objects.all()
+    serializer_class = GcpServiceAccountSerializer
     permission_classes = [permissions.IsAuthenticated]
